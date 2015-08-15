@@ -1,6 +1,8 @@
 FROM ubuntu:trusty
 MAINTAINER chosenken@gmail.com
 
+ENV REFRESHED_ON 08-15-2015
+
 ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
@@ -16,6 +18,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache && \
 \
     apt-get -qy --force-yes dist-upgrade && \
+    apt-get upgrade -qy --force-yes \
     apt-get install -qy --force-yes \
       apt-transport-https bzip2 ca-certificates curl dnsutils git openssl procps python python-software-properties \
       rsync rsyslog software-properties-common ssl-cert supervisor tar wget unrar vim&& \
