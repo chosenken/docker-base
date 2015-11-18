@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER chosenken@gmail.com
 
-ENV REFRESHED_ON 10-21-2015
+ENV REFRESHED_ON 11-17-2015
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="en_US.UTF-8" \
