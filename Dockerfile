@@ -1,7 +1,7 @@
-FROM ubuntu:trusty
+FROM ubuntu
 MAINTAINER chosenken@gmail.com
 
-ENV REFRESHED_ON 08-28-2016
+ENV REFRESHED_ON=06-02-2017
 
 ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="en_US.UTF-8" \
@@ -20,7 +20,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     apt-get upgrade -qy --force-yes && \
     apt-get install -qy --force-yes \
       apt-transport-https bzip2 ca-certificates curl dnsutils git openssl procps python python-software-properties \
-      rsync rsyslog software-properties-common ssl-cert supervisor tar wget unrar vim unzip && \
+      rsync rsyslog software-properties-common ssl-cert supervisor tar wget unrar-free vim unzip && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
